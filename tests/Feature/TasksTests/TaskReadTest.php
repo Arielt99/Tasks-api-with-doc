@@ -10,6 +10,7 @@ use Tests\TestCase;
 class TaskReadTest extends TestCase
 {
     use RefreshDatabase;
+
     ///one user's task
     /**
      * Test with all fields correctly filled and valid token given.
@@ -34,6 +35,7 @@ class TaskReadTest extends TestCase
         ->assertJsonPath('task.id', $task->id);;
     }
 
+    
     //id
     /**
      * Test with an id non corresponding to one of current user tasks.
@@ -80,6 +82,7 @@ class TaskReadTest extends TestCase
         ->assertJsonStructure(['message'])
         ->assertJsonPath('message', "Unauthenticated.");
     }
+
 
     ///all user's tasks
     /**

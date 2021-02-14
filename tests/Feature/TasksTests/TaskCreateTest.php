@@ -18,11 +18,11 @@ class TaskCreateTest extends TestCase
     public function test_create_task_all_fields_correct()
     {
 
-        $token = User::factory()->create()->createToken('my-app-token')->plainTextToken;
-
         $credential = [
             'body' => 'testing task'
         ];
+
+        $token = User::factory()->create()->createToken('my-app-token')->plainTextToken;
 
         $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token]);
 
@@ -87,7 +87,6 @@ class TaskCreateTest extends TestCase
         $credential = [
             'body' => 'testing task'
         ];
-
 
         $token = '';
 

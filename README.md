@@ -75,6 +75,14 @@ php artisan key:generate
         - only the completed tasks
         - only the non-completed tasks
         - ***token*** empty or expired
+- update
+    - everything is well filled
+    - no user's task has the given ***id***
+
+    - ***completed*** empty 
+    - ***completed*** is not a boolean
+
+    - ***token*** empty or expired
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
