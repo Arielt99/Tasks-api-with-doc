@@ -4,6 +4,10 @@ Tasks-api-with-doc is a laravel powered api of tasks gestion.
 Using token for connextion.
 This project is made mainly for learning how to use and make feature&unit test.
 
+→[hosted version](https://ariel-task-api-w-doc.herokuapp.com/api)(Is on heroku so might take some time to load at first)
+
+→[documentation with swagger](https://app.swaggerhub.com/apis-docs/Arielt99/Tasks_Api/1.0)
+
 ## Quick Start
 
 ``` bash
