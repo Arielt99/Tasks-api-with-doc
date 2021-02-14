@@ -31,7 +31,7 @@ class TaskDeleteTest extends TestCase
         $response
         ->assertStatus(200)
         ->assertJsonStructure(['message'])
-        ->assertJsonPath('message', "Task deleted succesfully.");
+        ->assertJsonPath('message', "Task deleted successfully.");
     }
 
 

@@ -61,7 +61,7 @@ class TaskController extends Controller
         $request->user()->tasks()->create(["body" => $request->body]);
 
         $response = [
-            'message' => "Task created succesfully."
+            'message' => "Task created successfully."
         ];
 
         return response($response, 201);
@@ -76,7 +76,7 @@ class TaskController extends Controller
         $request->user()->tasks()->findOrFail($id)->update(["completed" => $request->completed]);
 
         $response = [
-            'message' => "Task updated succesfully."
+            'message' => "Task updated successfully."
         ];
 
         return response($response, 200);
@@ -89,7 +89,7 @@ class TaskController extends Controller
         $request->user()->tasks()->findOrFail($id)->delete();
 
         $response = [
-            'message' => "Task deleted succesfully."
+            'message' => "Task deleted successfully."
         ];
 
         return response($response, 200);

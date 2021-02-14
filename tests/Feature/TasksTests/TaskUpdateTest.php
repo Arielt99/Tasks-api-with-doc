@@ -33,7 +33,7 @@ class TaskUpdateTest extends TestCase
         $response
         ->assertStatus(200)
         ->assertJsonStructure(['message'])
-        ->assertJsonPath('message', "Task updated succesfully.");
+        ->assertJsonPath('message', "Task updated successfully.");
     }
 
 

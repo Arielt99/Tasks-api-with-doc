@@ -29,7 +29,7 @@ class TaskCreateTest extends TestCase
         $response
         ->assertStatus(201)
         ->assertJsonStructure(['message'])
-        ->assertJsonPath('message', "Task created succesfully.");
+        ->assertJsonPath('message', "Task created successfully.");
     }
 
 
@@ -68,7 +68,7 @@ class TaskCreateTest extends TestCase
 
         $token = User::factory()->create()->createToken('my-app-token')->plainTextToken;
 
-        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token]);
+        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'npm install -g @stoplight/cli' => 'Bearer '.$token]);
 
         $response
         ->assertStatus(422)
