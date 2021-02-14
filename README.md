@@ -83,6 +83,10 @@ php artisan key:generate
     - ***completed*** is not a boolean
 
     - ***token*** empty or expired
+- delete
+    - everything is well filled
+    - no user's task has the given ***id***
+    - ***token*** empty or expired
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
