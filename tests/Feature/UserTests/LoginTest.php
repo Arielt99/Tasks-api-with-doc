@@ -15,7 +15,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function test_login_all_correct()
+    public function test_login_all_fields_correct()
     {
         User::create([
             'email' => 'emailtest@mail.com',

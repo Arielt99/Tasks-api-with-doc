@@ -16,7 +16,12 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
-        $tasks = $request->user()->tasks()->orderBy('updated_at','DESC')->get();
+        $tasks = $request->user()->tasks()->orderBy('updated_at','DESC')
+            ->when(request('completed'), function ($query) {
+                $query->where('completed', request('completed'));
+            })
+            ->get();
+
         $response = [
             'tasks' => $tasks,
         ];

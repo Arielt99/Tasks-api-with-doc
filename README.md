@@ -23,6 +23,9 @@ php artisan key:generate
 ```
 ## Current test
 
+### Global
+- 404 not found
+
 ### User
 - register
     - everything is well filled 
@@ -62,6 +65,16 @@ php artisan key:generate
     - ***body*** is not a string
 
     - ***token*** empty or expired
+- read
+    - one of the user's task
+        - everything is well filled
+        - no user's task has the given ***id***
+        - ***token*** empty or expired
+    - all of the user's task
+        - everything is well filled
+        - only the completed tasks
+        - only the non-completed tasks
+        - ***token*** empty or expired
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

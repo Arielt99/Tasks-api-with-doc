@@ -14,7 +14,7 @@ class RegisterTest extends TestCase
      *
      * @return void
      */
-    public function test_register_all_correct()
+    public function test_register_all_fields_correct()
     {
         $credential = [
             'email' => 'emailtest3@mail.com',

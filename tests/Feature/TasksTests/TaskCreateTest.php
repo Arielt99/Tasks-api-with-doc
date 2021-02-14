@@ -4,10 +4,9 @@ namespace Tests\Feature\TasksTests;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class CreateTaskTest extends TestCase
+class TaskCreateTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -16,17 +15,16 @@ class CreateTaskTest extends TestCase
      *
      * @return void
      */
-    public function test_create_task_all_correct()
+    public function test_create_task_all_fields_correct()
     {
-        $user = User::factory()->create();
 
-        $token = $user->createToken('my-app-token')->plainTextToken;
+        $token = User::factory()->create()->createToken('my-app-token')->plainTextToken;
 
         $credential = [
             'body' => 'testing task'
         ];
 
-        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token,]);
+        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token]);
 
         $response
         ->assertStatus(201)
@@ -47,11 +45,9 @@ class CreateTaskTest extends TestCase
             'body' => ''
         ];
 
-        $user= User::factory()->create();
+        $token = User::factory()->create()->createToken('my-app-token')->plainTextToken;
 
-        $token = $user->createToken('my-app-token')->plainTextToken;
-
-        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token,]);
+        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token]);
 
         $response
         ->assertStatus(422)
@@ -70,11 +66,9 @@ class CreateTaskTest extends TestCase
             'body' => 231
         ];
 
-        $user= User::factory()->create();
+        $token = User::factory()->create()->createToken('my-app-token')->plainTextToken;
 
-        $token = $user->createToken('my-app-token')->plainTextToken;
-
-        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token,]);
+        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token]);
 
         $response
         ->assertStatus(422)
@@ -97,7 +91,7 @@ class CreateTaskTest extends TestCase
 
         $token = '';
 
-        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token,]);
+        $response = $this->json('POST', '/api/tasks', $credential, ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$token]);
 
         $response
         ->assertStatus(401)

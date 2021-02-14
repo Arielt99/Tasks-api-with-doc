@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('(.*)', function () {
     return response([
-        'message' => ['These credentials do not match our records.']
+        'message' => 'These credentials do not match our records.'
     ], 404);
 });
