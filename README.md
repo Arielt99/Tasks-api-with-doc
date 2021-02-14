@@ -23,6 +23,7 @@ php artisan key:generate
 ```
 ## Current test
 
+### User
 - register
     - everything is well filled 
 
@@ -53,6 +54,14 @@ php artisan key:generate
     - ***password*** do not match the record
     - ***password*** is not a string 
 
+### Tasks
+- create
+    - everything is well filled
+
+    - ***body*** empty 
+    - ***body*** is not a string
+
+    - ***token*** empty or expired
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

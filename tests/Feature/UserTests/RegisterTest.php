@@ -1,18 +1,16 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\UserTests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-
-use function PHPUnit\Framework\assertObjectHasAttribute;
 
 class RegisterTest extends TestCase
 {
     use RefreshDatabase;
 
     /**
-     * Test with all fields correctly filled and existing data.
+     * Test with all fields correctly filled.
      *
      * @return void
      */
@@ -26,7 +24,9 @@ class RegisterTest extends TestCase
 
         $response = $this->json('POST', '/api/register', $credential, ['Accept' => 'application/json']);
 
-        $response->assertStatus(201)->assertJsonStructure(['user', 'token']);
+        $response
+        ->assertStatus(201)
+        ->assertJsonStructure(['user', 'token']);
     }
 
 
@@ -53,7 +53,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * Test with email fields wrong format.
+     * Test with email wrong format.
      *
      * @return void
      */
@@ -95,7 +95,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * Test with email fields is not a string.
+     * Test with email is not a string.
      *
      * @return void
      */
@@ -139,7 +139,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * Test with password fields wrong format.
+     * Test with password wrong format.
      *
      * @return void
      */
@@ -160,7 +160,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * Test with password fields too short.
+     * Test with password too short.
      *
      * @return void
      */
@@ -181,7 +181,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * Test with password fields is not a string.
+     * Test with password is not a string.
      *
      * @return void
      */
@@ -225,7 +225,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * Test with name fields is not a string.
+     * Test with name is not a string.
      *
      * @return void
      */

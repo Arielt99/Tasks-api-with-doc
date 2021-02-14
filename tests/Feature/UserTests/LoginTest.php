@@ -1,17 +1,17 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\UserTests;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
-     * Test with all fiels correctly filled and existing data.
+     * Test with all fiels correctly filled.
      *
      * @return void
      */
@@ -30,9 +30,13 @@ class LoginTest extends TestCase
 
         $response = $this->json('POST', '/api/login', $credential, ['Accept' => 'application/json']);
 
-        $response->assertStatus(201)->assertJsonStructure(['user', 'token']);;
+        $response
+        ->assertStatus(201)
+        ->assertJsonStructure(['user', 'token']);;
     }
-//email field
+
+
+    //email field
     /**
      * Test with email fields empty.
      *
@@ -54,7 +58,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Test with email fields wrong format.
+     * Test with email wrong format.
      *
      * @return void
      */
@@ -94,7 +98,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Test with email fields is not a string.
+     * Test with email is not a string.
      *
      * @return void
      */
@@ -136,7 +140,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Test with password fields wrong format.
+     * Test with password wrong format.
      *
      * @return void
      */
@@ -156,7 +160,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Test with password fields too short.
+     * Test with password too short.
      *
      * @return void
      */
@@ -176,7 +180,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Test with email not matching the records.
+     * Test with password not matching the records.
      *
      * @return void
      */
@@ -196,7 +200,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Test with password fields is not a string.
+     * Test with password is not a string.
      *
      * @return void
      */
