@@ -23,6 +23,11 @@ php artisan key:generate
 ```
 ## Current test
 
+``` bash
+# run the tests
+php artisan test
+```
+
 ### Global
 - 404 not found
 

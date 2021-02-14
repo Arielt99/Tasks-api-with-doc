@@ -1,0 +1,57 @@
+8 fichiers, 34 tests
+
+#global = 1 test
+-404
+
+#register = 11 tests ✅
+-tout est bon ✅
+-email vide ✅
+-email déjà prit ✅
+-email mauvais format ✅
+-email pas un string ✅
+-password vide ✅
+-password mauvais format ✅
+-password pas un string ✅
+-username vide ✅
+-username mauvais format ✅
+-username pas un string ✅
+
+#login = 5 tests
+-tout est bon ✅
+-password mauvais format ou vide ✅
+-email mauvais format ou vide
+-utilisateur inexistant
+-mot de passe faux
+
+#(read/get)recuperation toutes taches d'un user connecté = 3 tests
+-tout est bon
+-pas de token donné
+-token expiré
+
+#(read/get)recuperations une tache = 5 tests
+-tout est bon
+-id inexistant
+-pas la note du user
+-pas de token donné
+-token expiré
+
+#(post) ajouter une tache = 4 tests
+-tout est bon
+-body vide
+-pas de token donné
+-token expiré
+
+#(update/put) modifier une tache = 6 tests
+-tout est bon
+-complete mauvais format ou vide si donné
+-id inexistant
+-pas la note du user
+-pas de token donné
+-token expiré
+
+#(delete) retirer une tache = 5 tests
+-tout est bon
+-id inexistant
+-pas la note du user
+-pas de token donné
+-token expiré
